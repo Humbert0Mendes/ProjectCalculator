@@ -2,11 +2,11 @@
     <string name="app_name">Calculadora</string>
     <string name="btPtn">.</string>
     <string name="btZero">0</string>
-    <string name="btIgual"></string>
+    <string name="btIgual">=</string>
     <string name="btRaiz">√¯</string>
     <string name="btUm">1</string>
     <string name="btDois">2</string>
-    <string name="btTrês">3</string>
+    <string name="btTres">3</string>
     <string name="btMulti">*</string>
     <string name="btPotencia">x³</string>
     <string name="btQuatro">4</string>
@@ -19,4 +19,6 @@
     <string name="btNove">9</string>
     <string name="btSoma">+</string>
     <string name="btDel">C</string>
+    <string name="btBarra">/</string>
+    <string name="resultado">Resultado:</string>
 </resources>
