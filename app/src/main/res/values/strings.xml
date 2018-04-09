@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="btPtn">.</string>
+    <string name="btZero">0</string>
+    <string name="btIgual"></string>
+    <string name="btRaiz">√¯</string>
+    <string name="btUm">1</string>
+    <string name="btDois">2</string>
+    <string name="btTrês">3</string>
+    <string name="btMulti">*</string>
+    <string name="btPotencia">x³</string>
+    <string name="btQuatro">4</string>
+    <string name="btCinco">5</string>
+    <string name="btSeis">6</string>
+    <string name="btSub">-</string>
+    <string name="btCe">CE</string>
+    <string name="btSete">7</string>
+    <string name="btOito">8</string>
+    <string name="btNove">9</string>
+    <string name="btSoma">+</string>
+    <string name="btDel">C</string>
+</resources>
