@@ -63,6 +63,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnZero"
         android:layout_toRightOf="@id/btnUm"
+        android:onClick="botao_dois"
         android:text="@string/btDois"
         />
 
@@ -72,6 +73,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnIgual"
         android:layout_toRightOf="@id/btnDois"
+        android:onClick="botao_tres"
         android:text="@string/btTres"
         />
 
@@ -81,6 +83,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnBarra"
         android:layout_toRightOf="@id/btnTres"
+        android:onClick="botao_multi"
         android:text="@string/btMulti"
         />
 
@@ -98,6 +101,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_above="@id/btnUm"
+        android:onClick="botao_quatro"
         android:text="@string/btQuatro"
         />
 
@@ -107,6 +111,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnDois"
         android:layout_toRightOf="@id/btnQuatro"
+        android:onClick="botao_cinco"
         android:text="@string/btCinco"
         />
 
@@ -116,6 +121,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnTres"
         android:layout_toRightOf="@id/btnCinco"
+        android:onClick="botao_seis"
         android:text="@string/btSeis"
         />
 
@@ -125,6 +131,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnMulti"
         android:layout_toRightOf="@id/btnSeis"
+        android:onClick="botao_sub"
         android:text="@string/btSub"
         />
 
@@ -134,6 +141,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnPoten"
         android:layout_toRightOf="@id/btnSub"
+        android:onClick="botao_ce"
         android:text="@string/btCe"
         />
 
@@ -142,6 +150,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_above="@id/btnQuatro"
+        android:onClick="botao_sete"
         android:text="@string/btSete"
         />
 
@@ -151,6 +160,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnCinco"
         android:layout_toRightOf="@id/btnSete"
+        android:onClick="botao_oito"
         android:text="@string/btOito"
         />
 
@@ -160,6 +170,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnSeis"
         android:layout_toRightOf="@id/btnOito"
+        android:onClick="botao_nove"
         android:text="@string/btNove"
         />
 
@@ -169,6 +180,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnSub"
         android:layout_toRightOf="@id/btnNove"
+        android:onClick="botao_soma"
         android:text="@string/btSoma"
         />
 
@@ -178,6 +190,7 @@
         android:layout_height="80dp"
         android:layout_above="@id/btnCe"
         android:layout_toRightOf="@id/btnSoma"
+        android:onClick="botao_c"
         android:text="@string/btDel"
         />
 

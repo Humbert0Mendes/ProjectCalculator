@@ -20,5 +20,5 @@
     <string name="btSoma">+</string>
     <string name="btDel">C</string>
     <string name="btBarra">/</string>
-    <string name="resultado">Resultado:</string>
+    <string name="resultado">Resultado: </string>
 </resources>
