@@ -38,6 +38,7 @@
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/btnIgual"
+        android:onClick="botao_div"
         android:text="@string/btBarra" />
 
     <Button
@@ -46,6 +47,7 @@
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/btnBarra"
+        android:onClick="botao_raiz"
         android:text="@string/btRaiz" />
 
     <Button
@@ -196,7 +198,7 @@
 
     <TextView
         android:id="@+id/resultado"
-        android:layout_width="match_parent"
+        android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_above="@+id/btnDel"
         android:ems="10"
@@ -211,6 +213,14 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         />
+
+    <TextView
+        android:id="@+id/valorResult"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_above="@+id/btnOito"
+        android:layout_toRightOf="@id/resultado"
+        android:text="" />
 
 
 </RelativeLayout>

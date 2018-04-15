@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private EditText operacao;
-    private TextView result;
+    private TextView result, valorResult;
 
 
     @Override
@@ -18,23 +18,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         operacao = (EditText)findViewById(R.id.cpOperacao);
-        result = (TextView)findViewById(R.id.resultado);
+        valorResult = (TextView)findViewById(R.id.resultado);
 
     }
 
     public void calculaOperacao(View view){
         String resultadoFim = null;
-        result.setText("");
+      //  result.setText("");
         String vlOperacao = operacao.getText().toString();
-        String[] vl;
-        vl = vlOperacao.split("[-+/*]");
-        String vTeste = vl[0];
-        String vTeste2 = vl[1];
-        System.out.println("Valor teste: " + vTeste + " Valor teste 2: " +vTeste2);
+
+        //System.out.println("Valor teste: " + vTeste + " Valor teste 2: " +vTeste2);
 
         try {
+
+            String[] vl;
+            vl = vlOperacao.split("[-+/*]");
+            String vTeste = vl[0];
+            String vTeste2 = vl[1];
+            String vTeste3;
+
             if (vlOperacao.contains("+")) {
-                resultadoFim = vTeste + vTeste2;
+                Float vl1 = Float.parseFloat(vTeste);
+                Float vl2 = Float.parseFloat(vTeste2);
+                Float valorFim = vl1 + vl2;
                 result.setText("Resultado: " + resultadoFim);
 
             } else if (vlOperacao.contains("-")) {
@@ -60,9 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Implementação das ações dos botões!
-    public void botao_zero (View view){
-        operacao.setText(operacao.getText().toString() + "0");
-    }
+    public void botao_zero (View view){operacao.setText(operacao.getText().toString() + "0");}
 
     public  void botao_pt (View view){
         operacao.setText(operacao.getText().toString() + ".");
@@ -112,7 +116,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void botao_multi(View view){operacao.setText(operacao.getText().toString() + "*");}
 
-    public void botao_ce (View view) {operacao.setText("");}
+    public  void botao_div(View view){operacao.setText(operacao.getText().toString() + "/");}
+
+    public void botao_raiz(View view){operacao.setText(operacao.getText().toString() + "√¯");}
+
+    public void botao_ce (View view) {
+        operacao.setText("");
+        result.setText("Resultado: ");
+    }
 
     public void botao_c(View view){
             String valorCampo = operacao.getText().toString();
