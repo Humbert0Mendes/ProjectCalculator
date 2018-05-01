@@ -38,29 +38,30 @@ public class MainActivity extends AppCompatActivity {
              vTeste3 = null;}
 
             if (vlOperacao.contains("+")) {
-                Float vl1 = Float.parseFloat(vTeste);
-                Float vl2 = Float.parseFloat(vTeste2);
-                Float valorFim = vl1 + vl2;
+                Double vl1 = Double.parseDouble(vTeste);
+                Double vl2 = Double.parseDouble(vTeste2);
+                Double valorFim = vl1 + vl2;
                 resultadoFim = String.valueOf(valorFim);
                 valorResult.setText("Resultado: " + resultadoFim);
 
             } else if (vlOperacao.contains("-")) {
-                Float fl = Float.parseFloat(vTeste);
-                Float fl2 = Float.parseFloat(vTeste2);
-                Float fl3 = fl - fl2;
+                Double fl = Double.parseDouble(vTeste);
+                Double fl2 = Double.parseDouble(vTeste2);
+                Double fl3 = fl - fl2;
                 resultadoFim = String.valueOf(fl3);
                 valorResult.setText("Resultado: " + resultadoFim);
 
             } else if (vlOperacao.contains("*")) {
-                Float multi1 = Float.parseFloat(vTeste);
-                Float multi2 = Float.parseFloat(vTeste2);
-                Float multiVl = multi1 * multi2;
+                Double multi1 = Double.parseDouble(vTeste);
+                Double multi2 = Double.parseDouble(vTeste2);
+                Double multiVl = multi1 * multi2;
                 resultadoFim = String.valueOf(multiVl);
                 valorResult.setText("Resultado: " + resultadoFim);
+
             } else if (vlOperacao.contains("/")) {
-                Float div1 = Float.parseFloat(vTeste);
-                Float div2 = Float.parseFloat(vTeste2);
-                Float divResult = div1 / div2;
+                Double div1 = Double.parseDouble(vTeste);
+                Double div2 = Double.parseDouble(vTeste2);
+                Double divResult = div1 / div2;
                 resultadoFim = String.valueOf(divResult);
                 valorResult.setText("Resultado: " + resultadoFim);
 
