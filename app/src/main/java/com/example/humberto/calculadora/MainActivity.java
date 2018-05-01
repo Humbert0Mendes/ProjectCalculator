@@ -12,52 +12,72 @@ public class MainActivity extends AppCompatActivity {
     private EditText operacao;
     private TextView result, valorResult;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        operacao = (EditText)findViewById(R.id.cpOperacao);
-        valorResult = (TextView)findViewById(R.id.resultado);
-
+        operacao = findViewById(R.id.cpOperacao);
+        valorResult = findViewById(R.id.resultado);
     }
 
-    public void calculaOperacao(View view){
+    //Implementação do cálculo das operações.
+    public void calculaOperacao(View view) {
         String resultadoFim = null;
-      //  result.setText("");
         String vlOperacao = operacao.getText().toString();
-
-        //System.out.println("Valor teste: " + vTeste + " Valor teste 2: " +vTeste2);
 
         try {
 
             String[] vl;
-            vl = vlOperacao.split("[-+/*]");
+            vl = vlOperacao.split("[-+/*√¯^]");
             String vTeste = vl[0];
-            String vTeste2 = vl[1];
-            String vTeste3;
+            String vTeste2 = null;
+            String vTeste3 = null;
+
+            if(vl.length > 1){
+             vTeste2 = vl[1];
+             vTeste3 = null;}
 
             if (vlOperacao.contains("+")) {
                 Float vl1 = Float.parseFloat(vTeste);
                 Float vl2 = Float.parseFloat(vTeste2);
                 Float valorFim = vl1 + vl2;
-                result.setText("Resultado: " + resultadoFim);
+                resultadoFim = String.valueOf(valorFim);
+                valorResult.setText("Resultado: " + resultadoFim);
 
             } else if (vlOperacao.contains("-")) {
                 Float fl = Float.parseFloat(vTeste);
                 Float fl2 = Float.parseFloat(vTeste2);
                 Float fl3 = fl - fl2;
                 resultadoFim = String.valueOf(fl3);
-                result.setText("Resultado: " + resultadoFim);
+                valorResult.setText("Resultado: " + resultadoFim);
 
             } else if (vlOperacao.contains("*")) {
                 Float multi1 = Float.parseFloat(vTeste);
                 Float multi2 = Float.parseFloat(vTeste2);
                 Float multiVl = multi1 * multi2;
                 resultadoFim = String.valueOf(multiVl);
-                result.setText("Resultado: " + resultadoFim);
+                valorResult.setText("Resultado: " + resultadoFim);
+            } else if (vlOperacao.contains("/")) {
+                Float div1 = Float.parseFloat(vTeste);
+                Float div2 = Float.parseFloat(vTeste2);
+                Float divResult = div1 / div2;
+                resultadoFim = String.valueOf(divResult);
+                valorResult.setText("Resultado: " + resultadoFim);
+
+            } else if (vlOperacao.contains("√¯")) {
+                Double raiz = Double.parseDouble(vTeste);
+                Double vlRaiz = Math.sqrt(raiz);
+                resultadoFim = String.valueOf(vlRaiz);
+                valorResult.setText("Resultado: " + resultadoFim);
+
+            }else if(vlOperacao.contains("^")){
+                double v1 = Integer.parseInt(vTeste);
+                double v2 = Integer.parseInt(vTeste2);
+                double valorPt= Math.pow(v1, v2);
+                resultadoFim = String.valueOf(valorPt);
+                valorResult.setText("Resultado: " + resultadoFim);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
             dlg.setTitle("Aviso!");
             dlg.setMessage("Operação inválida, tente novamente!");
@@ -120,9 +140,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void botao_raiz(View view){operacao.setText(operacao.getText().toString() + "√¯");}
 
+    public  void botao_exp(View view){operacao.setText(operacao.getText().toString() + "^");}
+
     public void botao_ce (View view) {
         operacao.setText("");
-        result.setText("Resultado: ");
+        valorResult.setText("");
     }
 
     public void botao_c(View view){
@@ -131,7 +153,5 @@ public class MainActivity extends AppCompatActivity {
                 String newValorCampo = valorCampo.substring(0,valorCampo.length()-1);
                 operacao.setText(newValorCampo);
             }
-
         }
-
 }
