@@ -184,13 +184,22 @@
 
     <TextView
         android:id="@+id/resultado"
-        android:layout_width="match_parent"
+        android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_above="@+id/btnDel"
         android:ems="10"
         android:text="@string/resultado" />
 
-    <EditText
+    <TextView
+        android:id="@+id/vlResultado"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnOito"
+        android:layout_toRightOf="@id/resultado"
+        android:ems="10"
+        />
+
+    <TextView
         android:id="@+id/cpOperacao"
         android:layout_width="match_parent"
         android:layout_height="80dp"
