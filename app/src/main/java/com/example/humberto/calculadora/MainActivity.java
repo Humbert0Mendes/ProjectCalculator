@@ -24,66 +24,75 @@ public class MainActivity extends AppCompatActivity {
         String resultadoFim = null;
         String vlOperacao = operacao.getText().toString();
 
-        try {
+        if(vlOperacao.equals("")){
 
-            String[] vl;
-            vl = vlOperacao.split("[-+/*√¯^]");
-            String vTeste = vl[0];
-            String vTeste2 = null;
-            String vTeste3 = null;
-
-            if(vl.length > 1){
-             vTeste2 = vl[1];
-            }
-
-            if (vlOperacao.contains("+")) {
-                Double vl1 = Double.parseDouble(vTeste);
-                Double vl2 = Double.parseDouble(vTeste2);
-                Double valorFim = vl1 + vl2;
-
-                resultadoFim = String.valueOf(valorFim);
-                valorResult.setText(resultadoFim);
-
-            } else if (vlOperacao.contains("-")) {
-                Double fl = Double.parseDouble(vTeste);
-                Double fl2 = Double.parseDouble(vTeste2);
-                Double fl3 = fl - fl2;
-                resultadoFim = String.valueOf(fl3);
-                valorResult.setText(resultadoFim);
-
-            } else if (vlOperacao.contains("*")) {
-                Double multi1 = Double.parseDouble(vTeste);
-                Double multi2 = Double.parseDouble(vTeste2);
-                Double multiVl = multi1 * multi2;
-                resultadoFim = String.valueOf(multiVl);
-                valorResult.setText(resultadoFim);
-
-            } else if (vlOperacao.contains("/")) {
-                Double div1 = Double.parseDouble(vTeste);
-                Double div2 = Double.parseDouble(vTeste2);
-                Double divResult = div1 / div2;
-                resultadoFim = String.valueOf(divResult);
-                valorResult.setText(resultadoFim);
-
-            } else if (vlOperacao.contains("√¯")) {
-                Double raiz = Double.parseDouble(vTeste);
-                Double vlRaiz = Math.sqrt(raiz);
-                resultadoFim = String.valueOf(vlRaiz);
-                valorResult.setText(resultadoFim);
-
-            }else if(vlOperacao.contains("^")){
-                double v1 = Integer.parseInt(vTeste);
-                double v2 = Integer.parseInt(vTeste2);
-                double valorPt= Math.pow(v1, v2);
-                resultadoFim = String.valueOf(valorPt);
-                valorResult.setText(resultadoFim);
-            }
-
-        } catch (Exception e) {
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
             dlg.setTitle("Aviso!");
-            dlg.setMessage("Operação inválida, tente novamente!");
+            dlg.setMessage("Digite os valores da sua operação!");
             dlg.show();
+        }else {
+
+            try {
+
+                String[] vl;
+                vl = vlOperacao.split("[-+/*√¯^]");
+                String vTeste = vl[0];
+                String vTeste2 = null;
+                String vTeste3 = null;
+
+                if (vl.length > 1) {
+                    vTeste2 = vl[1];
+                }
+
+                if (vlOperacao.contains("+")) {
+                    Double vl1 = Double.parseDouble(vTeste);
+                    Double vl2 = Double.parseDouble(vTeste2);
+                    Double valorFim = vl1 + vl2;
+
+                    resultadoFim = String.valueOf(valorFim);
+                    valorResult.setText(resultadoFim);
+
+                } else if (vlOperacao.contains("-")) {
+                    Double fl = Double.parseDouble(vTeste);
+                    Double fl2 = Double.parseDouble(vTeste2);
+                    Double fl3 = fl - fl2;
+                    resultadoFim = String.valueOf(fl3);
+                    valorResult.setText(resultadoFim);
+
+                } else if (vlOperacao.contains("*")) {
+                    Double multi1 = Double.parseDouble(vTeste);
+                    Double multi2 = Double.parseDouble(vTeste2);
+                    Double multiVl = multi1 * multi2;
+                    resultadoFim = String.valueOf(multiVl);
+                    valorResult.setText(resultadoFim);
+
+                } else if (vlOperacao.contains("/")) {
+                    Double div1 = Double.parseDouble(vTeste);
+                    Double div2 = Double.parseDouble(vTeste2);
+                    Double divResult = div1 / div2;
+                    resultadoFim = String.valueOf(divResult);
+                    valorResult.setText(resultadoFim);
+
+                } else if (vlOperacao.contains("√¯")) {
+                    Double raiz = Double.parseDouble(vTeste);
+                    Double vlRaiz = Math.sqrt(raiz);
+                    resultadoFim = String.valueOf(vlRaiz);
+                    valorResult.setText(resultadoFim);
+
+                } else if (vlOperacao.contains("^")) {
+                    double v1 = Integer.parseInt(vTeste);
+                    double v2 = Integer.parseInt(vTeste2);
+                    double valorPt = Math.pow(v1, v2);
+                    resultadoFim = String.valueOf(valorPt);
+                    valorResult.setText(resultadoFim);
+                }
+
+            } catch (Exception e) {
+                AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+                dlg.setTitle("Aviso!");
+                dlg.setMessage("Operação inválida, tente novamente!");
+                dlg.show();
+            }
         }
     }
 
