@@ -1,49 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.humberto.calculadora.MainActivity">
 
-
     <Button
         android:id="@+id/btnPonto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:onClick="botao_pt"
         android:text="@string/btPtn" />
 
     <Button
         android:id="@+id/btnZero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/btnPonto"
-        android:text="Button" />
+        android:onClick="botao_zero"
+        android:text="@string/btZero" />
 
     <Button
         android:id="@+id/btnIgual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/btnZero"
-        android:text="Button" />
+        android:onClick="calculaOperacao"
+        android:text="@string/btIgual" />
 
     <Button
         android:id="@+id/btnBarra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/btnIgual"
-        android:text="Button" />
+        android:onClick="botao_div"
+        android:text="@string/btBarra" />
 
     <Button
         android:id="@+id/btnRaiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/btnBarra"
-        android:text="Button" />
+        android:onClick="botao_raiz"
+        android:text="@string/btRaiz" />
+
+    <Button
+        android:id="@+id/btnUm"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnPonto"
+        android:onClick="botao_um"
+        android:text="@string/btUm" />
+
+    <Button
+        android:id="@+id/btnDois"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnZero"
+        android:layout_toRightOf="@id/btnUm"
+        android:onClick="botao_dois"
+        android:text="@string/btDois" />
+
+    <Button
+        android:id="@+id/btnTres"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnIgual"
+        android:layout_toRightOf="@id/btnDois"
+        android:onClick="botao_tres"
+        android:text="@string/btTres" />
+
+    <Button
+        android:id="@+id/btnMulti"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnBarra"
+        android:layout_toRightOf="@id/btnTres"
+        android:onClick="botao_multi"
+        android:text="@string/btMulti" />
+
+    <Button
+        android:id="@+id/btnPoten"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnRaiz"
+        android:layout_toRightOf="@id/btnBarra"
+        android:onClick="botao_exp"
+        android:text="@string/btPotencia" />
+
+    <Button
+        android:id="@+id/btnQuatro"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnUm"
+        android:onClick="botao_quatro"
+        android:text="@string/btQuatro" />
+
+    <Button
+        android:id="@+id/btnCinco"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnDois"
+        android:layout_toRightOf="@id/btnQuatro"
+        android:onClick="botao_cinco"
+        android:text="@string/btCinco" />
+
+    <Button
+        android:id="@+id/btnSeis"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnTres"
+        android:layout_toRightOf="@id/btnCinco"
+        android:onClick="botao_seis"
+        android:text="@string/btSeis" />
+
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnMulti"
+        android:layout_toRightOf="@id/btnSeis"
+        android:onClick="botao_sub"
+        android:text="@string/btSub" />
+
+    <Button
+        android:id="@+id/btnCe"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnPoten"
+        android:layout_toRightOf="@id/btnSub"
+        android:onClick="botao_ce"
+        android:text="@string/btCe" />
+
+    <Button
+        android:id="@+id/btnSete"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnQuatro"
+        android:onClick="botao_sete"
+        android:text="@string/btSete" />
+
+    <Button
+        android:id="@+id/btnOito"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnCinco"
+        android:layout_toRightOf="@id/btnSete"
+        android:onClick="botao_oito"
+        android:text="@string/btOito" />
+
+    <Button
+        android:id="@+id/btnNove"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnSeis"
+        android:layout_toRightOf="@id/btnOito"
+        android:onClick="botao_nove"
+        android:text="@string/btNove" />
+
+    <Button
+        android:id="@+id/btnSoma"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnSub"
+        android:layout_toRightOf="@id/btnNove"
+        android:onClick="botao_soma"
+        android:text="@string/btSoma" />
+
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnCe"
+        android:layout_toRightOf="@id/btnSoma"
+        android:onClick="botao_c"
+        android:text="@string/btDel" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@+id/btnDel"
+        android:ems="10"
+        android:text="@string/resultado" />
+
+    <TextView
+        android:id="@+id/vlResultado"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_above="@id/btnOito"
+        android:layout_toRightOf="@id/resultado"
+        android:ems="10"
+        />
+
+    <TextView
+        android:id="@+id/cpOperacao"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10" />
+
+
 </RelativeLayout>
